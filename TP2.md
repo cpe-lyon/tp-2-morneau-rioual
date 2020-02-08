@@ -31,7 +31,6 @@
 Avant de taper nos scripts, nous créons un dossier de travail et nous l'ajoutons à la variable **PATH** avec la commande suivante : 
 `cd ~|mkdir script|echo 'PATH=$PATH:~/script'>> ~/.bashrc`. Ce qui a pour conséquence d'ajouter le chemin ~/script dans la variable **PATH** à chaque démarrage.
 
-1) 
 ```
 #!bin/bash
 PASSWORD="TP"
@@ -85,15 +84,66 @@ fi
 
 ## Exercice 5:
 ```
-
+#!/bin/bash
+fact=1
+for i in $(seq 2 $1); do
+    fact=$(($fact * $i))
+ done
+ echo $fact
 ```
 
 ## Exercice 6:
 ```
+#!/bin/bash
+try=1001
+nb=$RANDOM
+while [ $nb -gt 1000 ]
+do
+    nb=$RANDOM
+done
 
+while [ $try -ne $nb ]
+do
+    read -p 'choisissez un nombre!' try
+    if [ $try -lt $nb ]; then
+        echo -e '\nEssayez plus grand!\n'
+    elif [ $try -gt $nb ]; then
+        echo -e '\nEssayez plus petit!\n'
+    fi
+done
+echo -e '\nBravo, le nombre est :' $nb
 
 ```
 ## Exercice 7:
 ```
+#!/bin/bash
 
+fin=0
+i=2
+tab=()
+val =1
+
+function is_number()
+  {
+  re='^[+-]?[0-9]+([.][0-9]+)?$'
+  if ! [[ $1 =~ $re ]] ; then
+    return 1
+  else
+    return 0
+  fi
+  }
+  
+ is_number val
+ while [ $? -eq 1 ] 
+ do
+    read -p 'Entrez une valeur numérique' val
+    is_number $val
+ done
+ tab[1]=$val
+ while [$fin -ne 1 ]
+ do
+    read -p 'Entrez une valeur, ou exit pour sortir' val
+    
+ 
+ 
 ```
