@@ -32,17 +32,40 @@ Avant de taper nos scripts, nous créons un dossier de travail et nous l'ajouton
 `cd ~|mkdir script|echo 'PATH=$PATH:~/script'>> ~/.bashrc`. Ce qui a pour conséquence d'ajouter le chemin ~/script dans la variable **PATH** à chaque démarrage.
 
 1) 
-
-```#!bin/bash
+```
+#!bin/bash
 PASSWORD="TP"
 read -s -p 'veuillez donner le mot de passe' passe
 if [ \$pass=$PASSWORD ]; then
     echo 'bien vu'
 else
   echo 'dommage'
-fi```
+fi
+```
 
 ## Exercice 3:
+```
 
 
-exercice 4:
+```
+
+## Exercice 4:
+```
+
+
+
+```
+## Exercice 5:
+```
+
+```
+
+## Exercice 6:
+```
+
+
+```
+## Exercice 7:
+```
+
+```
