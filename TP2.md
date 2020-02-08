@@ -33,6 +33,7 @@ Avant de taper nos scripts, nous créons un dossier de travail et nous l'ajouton
 
 ```
 #!bin/bash
+
 PASSWORD="TP"
 read -s -p 'veuillez donner le mot de passe' passe
 if [ \$pass=$PASSWORD ]; then
@@ -45,6 +46,7 @@ fi
 ## Exercice 3:
 ```
 #!/bin/bash
+
 function is_number()
   {
   re='^[+-]?[0-9]+([.][0-9]+)?$'
@@ -61,12 +63,12 @@ if [ $? -eq 0 ]; then
 else
     echo 'pas reel'
 fi
-
 ```
 
 ## Exercice 4:
 ```
 #!/bin/bash
+
 if [ $# -eq 0 ]; then
     echo"Utilisation : $0 nom_utilisateur
 else
@@ -85,6 +87,7 @@ fi
 ## Exercice 5:
 ```
 #!/bin/bash
+
 fact=1
 for i in $(seq 2 $1); do
     fact=$(($fact * $i))
@@ -95,6 +98,7 @@ for i in $(seq 2 $1); do
 ## Exercice 6:
 ```
 #!/bin/bash
+
 try=1001
 nb=$RANDOM
 while [ $nb -gt 1000 ]
@@ -112,8 +116,8 @@ do
     fi
 done
 echo -e '\nBravo, le nombre est :' $nb
-
 ```
+
 ## Exercice 7:
 ```
 #!/bin/bash
@@ -143,7 +147,27 @@ function is_number()
  while [$fin -ne 1 ]
  do
     read -p 'Entrez une valeur, ou exit pour sortir' val
-    
- 
- 
+    is_number val
+    if [ $? -eq 0 ]; then
+        min=
+        max=
+        sum=
+        tab[i]=$val
+        for j in $(seq 1 $i)
+        do
+            if [ ${tab[j]} -lt $min ]; then
+                min = ${tab[j]}
+            elif [ ${tab[j]} -gt $max ]; then
+                max=${tab[j]}
+            fi
+            sum=$(($sum + ${tab[j]}))
+        done
+    else
+        if [ $val = 'exit' ]; then
+            fin=1
+        else
+            echo 'nombre non valide'
+    fi
+done
+echo 'Vous êtes sorti"
 ```
