@@ -1,5 +1,6 @@
-                                # Compte rendu TP2
-  # Exercice 1
+<h1 align="center";>Compte rendu TP2</h1>
+
+  ## Exercice 1
  
 1) Les commandes sont cherchés dans les fichiers contenus dans le **PATH**
 
