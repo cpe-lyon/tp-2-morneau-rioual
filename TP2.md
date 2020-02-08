@@ -45,16 +45,44 @@ fi
 
 ## Exercice 3:
 ```
+#!/bin/bash
+function is_number()
+  {
+  re='^[+-]?[0-9]+([.][0-9]+)?$'
+  if ! [[ $1 =~ $re ]] ; then
+    return 1
+  else
+    return 0
+  fi
+  }
 
+is_number $1
+if [ $? -eq 0 ]; then
+    echo 'reel'
+else
+    echo 'pas reel'
+fi
 
 ```
 
 ## Exercice 4:
 ```
-
-
-
+#!/bin/bash
+if [ $# -eq 0 ]; then
+    echo"Utilisation : $0 nom_utilisateur
+else
+    while(("$#")); do
+        a=$(grep -w "$1" /ect/passwd|wc -l)
+        if [$a -eq 0 ]; then
+            echo "utilisateur non existant"
+        else
+            echo "utilisateur existant"
+         fi
+    shift
+    done
+fi
 ```
+
 ## Exercice 5:
 ```
 
