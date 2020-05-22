@@ -32,7 +32,7 @@
 ## Exercice 2
 
 Avant de taper nos scripts, nous créons un dossier de travail et nous l'ajoutons à la variable **PATH** avec la commande suivante : 
-`cd ~|mkdir script|echo 'PATH=$PATH:~/script'>> ~/.bashrc`. Ce qui a pour conséquence d'ajouter le chemin ~/script dans la variable **PATH** à chaque démarrage.
+`cd ~|mkdir script|echo 'PATH=$PATH:~/script'>> ~/.bashrc`. Ce qui a pour conséquence d'ajouter le chemin ~/script dans la variable **PATH** à chaque démarrage. De ce fait inutile de rajouter ./ avant le nom de notre programme.
 
 ```
 #!bin/bash
