@@ -39,7 +39,7 @@ Avant de taper nos scripts, nous créons un dossier de travail et nous l'ajouton
 
 PASSWORD="TP"
 read -s -p 'veuillez donner le mot de passe' passe
-if [ \$pass=$PASSWORD ]; then
+if [ "$pass" = "$PASSWORD" ]; then
     echo 'bien vu'
 else
   echo 'dommage'
